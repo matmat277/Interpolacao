@@ -5,7 +5,7 @@ export default function App() {
   // Constante array de listagem de dados
   const dataList = [
     {
-      name: "Cardbiard boxes pack",
+      name: "Cardboard boxes pack",
       price: "25,58",
       category: "Tools, objects and decorations",
       onSale: false,
@@ -31,15 +31,15 @@ export default function App() {
   return (
     <View style={styles.container}>
 
-      // saudacao interpolada
+      {/* saudacao interpolada */}
       <Text style={styles.Texts}>Olá, {userName}!</Text>
       {dataList.map((item, index) => (
         <View key={index}>
 
-          //lista dados / nome
+          {/* lista dados / nome */}
           <Text>name: {item.name}</Text>
 
-          // categoria
+          {/* // categoria */}
           <Text>category: {item.category}</Text>
           {/*cor com base no bool*/}
           <Text
@@ -50,8 +50,8 @@ export default function App() {
             R$ {item.price}
           </Text>
 
-          //mostra texto somente quando onSale == true
-          {item.onSale ? <Text>Oferta Expecial!</Text> : null}
+          {/* //mostra texto somente quando onSale == true */}
+          {item.onSale && <Text>Oferta Expecial!</Text>}
           <Text></Text>
         </View>
       ))}
